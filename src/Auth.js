@@ -3,6 +3,12 @@ const key = /*JSON.parse(process.env.PRIVTE_KEY) ||*/ require('../privatekey.jso
 
 module.exports = () => {
 
+  if(process.env.PRIVTE_KEY){
+    const key = JSON.parse(process.env.PRIVTE_KEY);
+  } else{
+    const key = require('../privatekey.json');
+  }
+
   const jwtClient = new google.auth.JWT(
     key.client_email,
     null,
