@@ -1,12 +1,12 @@
 const google = require('googleapis');
-const key = /*JSON.parse(process.env.PRIVTE_KEY) ||*/ require('../privatekey.json');
 
 module.exports = () => {
 
+  var key;
   if(process.env.PRIVTE_KEY){
-    const key = JSON.parse(process.env.PRIVTE_KEY);
+    key = JSON.parse(process.env.PRIVATE_KEY);
   } else{
-    const key = require('../privatekey.json');
+    key = require('../privatekey.json');
   }
 
   const jwtClient = new google.auth.JWT(
