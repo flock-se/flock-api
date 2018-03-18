@@ -3,7 +3,7 @@ const google = require('googleapis');
 module.exports = () => {
 
   var key;
-  if(process.env.PRIVTE_KEY){
+  if(process.env.PRIVATE_KEY){
     key = JSON.parse(process.env.PRIVATE_KEY);
   } else{
     key = require('../privatekey.json');
