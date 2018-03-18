@@ -11,10 +11,11 @@ router.get('/user', function (req, res) {
     .then(client => UserService(client))
     .then(userService => userService.findAll())
     .then(data => {
-      console.log(data)
       res.send(data)
     })
-    .catch(res.send)
+    .catch(data => {
+      res.send(data)
+    })
 
 });
 
@@ -23,10 +24,11 @@ router.get('/user/:id', function (req, res) {
     .then(client => UserService(client))
     .then(userService => userService.findById(req.params.id))
     .then(data => {
-      console.log(data)
       res.send(data)
     })
-    .catch(res.send)
+    .catch(data => {
+      res.send(data)
+    })
 
 });
 
